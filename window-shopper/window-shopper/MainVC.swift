@@ -11,8 +11,10 @@ import UIKit
 class MainVC: UIViewController {
 
     @IBOutlet weak var wageTxt: CurrencyTxtField!
-    
     @IBOutlet weak var itemTxt: CurrencyTxtField!
+    @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var hourLbl: UILabel!
+    @IBOutlet weak var clearBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +35,27 @@ class MainVC: UIViewController {
     }
     
     @objc func calculate() {
-        print("its working")
+        if let wageTxt = wageTxt.text, let itemTxt = itemTxt.text {
+            if let wage = Double(wageTxt), let item = Double(itemTxt) {
+                priceLbl.isHidden = false
+                hourLbl.isHidden = false
+                clearBtn.isHidden = false
+                view.endEditing(true)
+                priceLbl.text = "\(Wage.getHours(forWage: wage, andPrice: item))"
+                
+            } else {
+                priceLbl.isHidden = false
+                priceLbl.text = "Insert number"
+            }
+        }
+        
     }
- 
+    @IBAction func clearBtnPressed(_ sender: Any) {
+        priceLbl.isHidden = true
+        hourLbl.isHidden = true
+        wageTxt.text = ""
+        itemTxt.text = ""
+    }
+    
 }
 
