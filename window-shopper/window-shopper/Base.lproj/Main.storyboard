@@ -63,7 +63,7 @@
                                 <rect key="frame" x="20" y="724" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Clear Calculator">
-                                    <color key="titleColor" red="0.0022435653723686566" green="0.7901326947532995" blue="0.0034810959528324293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
                                     <action selector="clearBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="739-vi-das"/>
